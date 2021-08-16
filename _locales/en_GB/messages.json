@@ -1,0 +1,248 @@
+{
+   "badgeNew": {
+      "message": "NEW"
+   },
+   "devToolsConnectionError": {
+      "message": "Warning: This DevTools frame has become disconnected, probably due to the extension being reloaded. You'll need to reload this frame (e.g. via its context menu) for it to recieve updates again."
+   },
+   "extensionDescription": {
+      "message": "Allows you to navigate a web page via WAI-ARIA landmarks, using the keyboard or a pop-up menu."
+   },
+   "extensionFullName": {
+      "message": "Landmark Navigation via Keyboard or Pop-up"
+   },
+   "extensionShortName": {
+      "message": "Landmarks"
+   },
+   "forbiddenPage": {
+      "message": "Landmarks is not allowed to run on this page."
+   },
+   "guessed": {
+      "message": "guessed"
+   },
+   "hintWhatIsNew": {
+      "message": "Landmarks was updated to version"
+   },
+   "hintWhatIsNewCTA": {
+      "message": "What's new?"
+   },
+   "hintWhatIsNewDismiss": {
+      "message": "Dismiss update note"
+   },
+   "inspectButtonName": {
+      "message": "Inspect"
+   },
+   "lintAbout": {
+      "message": "About warnings and further info"
+   },
+   "lintAboutLinkText": {
+      "message": "All about landmark regions, and some golden rules (story and slides for my a11yTOConf talk)"
+   },
+   "lintAboutNature": {
+      "message": "Warnings given above are best practice suggestions: following them can significantly improve the experience of people using assistive technologies. These warnings are not necessarily Web Content Accessibility Guidelines (WCAG) failures. However, using landmarks in a way that misrepresents the structure of the page can be a WCAG failure."
+   },
+   "lintDuplicateUnlabelled": {
+      "message": "Duplicate unlabelled landmark with this role."
+   },
+   "lintManyMains": {
+      "message": "More than one main element/region."
+   },
+   "lintManyVisibleMainElements": {
+      "message": "More than one visible \u003Cmain> element."
+   },
+   "lintNoMain": {
+      "message": "No main element/region."
+   },
+   "lintPageWarnings": {
+      "message": "Page warnings"
+   },
+   "lintWarningPrefix": {
+      "message": "Warning for"
+   },
+   "mainLandmarkShortcutDescription": {
+      "message": "Move to and highlight the main landmark"
+   },
+   "nextLandmarkShortcutDescription": {
+      "message": "Move to and highlight the next landmark"
+   },
+   "noLandmarksFound": {
+      "message": "No landmarks found."
+   },
+   "noMainLandmarkFound": {
+      "message": "No main landmark found."
+   },
+   "popupHelpButton": {
+      "message": "Help"
+   },
+   "popupPreferencesButton": {
+      "message": "Preferences"
+   },
+   "popupShowAllLandmarks": {
+      "message": "Show all landmarks"
+   },
+   "prefsBorderColour": {
+      "message": "Border colour:"
+   },
+   "prefsBorderFontSize": {
+      "message": "Border label font size (pixels):"
+   },
+   "prefsBorderType": {
+      "message": "Border type"
+   },
+   "prefsMomentary": {
+      "message": "Momentary"
+   },
+   "prefsNone": {
+      "message": "None"
+   },
+   "prefsPersistent": {
+      "message": "Persistent"
+   },
+   "prefsResetAll": {
+      "message": "Reset everything to defaults"
+   },
+   "prefsResetMessages": {
+      "message": "Reinstate dismissed messages"
+   },
+   "prefsResetMessagesDone": {
+      "message": "Help messages have been reinstated."
+   },
+   "prefsResetMessagesNone": {
+      "message": "No messages to reinstate."
+   },
+   "prefsTitle": {
+      "message": "Landmarks preferences"
+   },
+   "previousLandmarkShortcutDescription": {
+      "message": "Move to and highlight the previous landmark"
+   },
+   "roleAcknowledgments": {
+      "message": "Acknowledgements"
+   },
+   "roleAfterword": {
+      "message": "Afterword"
+   },
+   "roleAppendix": {
+      "message": "Appendix"
+   },
+   "roleBanner": {
+      "message": "Banner"
+   },
+   "roleBibliography": {
+      "message": "Bibliography"
+   },
+   "roleChapter": {
+      "message": "Chapter"
+   },
+   "roleComplementary": {
+      "message": "Complementary"
+   },
+   "roleConclusion": {
+      "message": "Conclusion"
+   },
+   "roleContentinfo": {
+      "message": "Content information"
+   },
+   "roleCredits": {
+      "message": "Credits"
+   },
+   "roleEndnotes": {
+      "message": "Endnotes"
+   },
+   "roleEpilogue": {
+      "message": "Epilogue"
+   },
+   "roleErrata": {
+      "message": "Errata"
+   },
+   "roleForeword": {
+      "message": "Foreword"
+   },
+   "roleForm": {
+      "message": "Form"
+   },
+   "roleGlossary": {
+      "message": "Glossary"
+   },
+   "roleIndex": {
+      "message": "Index"
+   },
+   "roleIntroduction": {
+      "message": "Introduction"
+   },
+   "roleMain": {
+      "message": "Main"
+   },
+   "roleNavigation": {
+      "message": "Navigation"
+   },
+   "rolePagelist": {
+      "message": "Pagelist"
+   },
+   "rolePart": {
+      "message": "Part"
+   },
+   "rolePreface": {
+      "message": "Preface"
+   },
+   "rolePrologue": {
+      "message": "Prologue"
+   },
+   "roleRegion": {
+      "message": "Region"
+   },
+   "roleSearch": {
+      "message": "Search"
+   },
+   "roleToc": {
+      "message": "Table of contents"
+   },
+   "statsCheckedMutationsDefinition": {
+      "message": "Mutations that Landmarks has tested to see if they are relevant (mutations that happen during a pause in scanning are ignored)."
+   },
+   "statsCheckedMutationsTerm": {
+      "message": "Checked mutations:"
+   },
+   "statsDefine": {
+      "message": "Define"
+   },
+   "statsDurationDefinition": {
+      "message": "Number of milliseconds the last landmark scan took."
+   },
+   "statsDurationTerm": {
+      "message": "Last scan took:"
+   },
+   "statsHeading": {
+      "message": "Mutation information"
+   },
+   "statsInfo": {
+      "message": "This info relates to how the extension is scanning the page for landmarks. When DevTools is open, the page will be scanned using the more detailed and slightly slower \"developer\" version of the scanner."
+   },
+   "statsMutationScansDefinition": {
+      "message": "Number of times the page has been scanned for landmarks due to mutations. Includes scans triggered directly by mutations, as well as scans scheduled for after a pause brought on by multiple successive mutations."
+   },
+   "statsMutationScansTerm": {
+      "message": "Mutation scans:"
+   },
+   "statsMutationsDefinition": {
+      "message": "Total number of changes to the page."
+   },
+   "statsMutationsTerm": {
+      "message": "Mutations:"
+   },
+   "statsNonMutationScansDefinition": {
+      "message": "Number of times the page has been scanned for landmarks for other reasons, such as: page load; use of History API; user command whilst scanning is paused due to prior mutations."
+   },
+   "statsNonMutationScansTerm": {
+      "message": "Non-mutation scans:"
+   },
+   "statsPauseDefinition": {
+      "message": "Time window during which subsequent changes to the page will be ignored."
+   },
+   "statsPauseTerm": {
+      "message": "Pause time:"
+   },
+   "toggleAllShortcutDescription": {
+      "message": "Toggle the display of all landmarks on the page"
+   }
+}

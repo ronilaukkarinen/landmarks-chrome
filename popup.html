@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!-- popup-and-sidebar -->
+		<link rel="stylesheet" href="common.css">
+		<link rel="stylesheet" href="common.gui.css">
+		<!-- /popup-and-sidebar -->
+		</head>  <!-- TODO: this gets aligned wrongly after the replace -->
+	<body>
+		<div id="content">
+			<!-- popup-and-sidebar -->
+			<div id="note-update" class="warning" hidden>
+				<p><span data-message="hintWhatIsNew"></span> <span id="version"></span>.</p>
+				<button id="note-update-cta" data-message="hintWhatIsNewCTA"></button>
+				<button id="note-update-dismiss" data-message="hintWhatIsNewDismiss"></button>
+			</div>
+			<!-- /popup-and-sidebar -->
+
+			<!-- popup-and-sidebar -->
+			<div id="landmarks"></div>
+
+			<label id="show-all-label" data-message="popupShowAllLandmarks">
+				<input type="checkbox" id="show-all">
+			</label>
+			<!-- /popup-and-sidebar -->
+		</div>
+
+		<!-- popup-and-sidebar -->
+		<div id="links">
+			<button id="help" data-message="popupHelpButton"></button>
+			<button id="settings" data-message="popupPreferencesButton"></button>
+		</div>
+		<!-- /popup-and-sidebar -->
+
+		<script src="popup.js"></script>
+	</body>
+</html>

@@ -1,0 +1,73 @@
+{
+   "author": "David Todd, Matthew Tylee Atkinson",
+   "background": {
+      "scripts": [ "background.js" ]
+   },
+   "browser_action": {
+      "default_icon": {
+         "16": "landmarks-16.png",
+         "24": "landmarks-24.png",
+         "32": "landmarks-32.png"
+      },
+      "default_popup": "popup.html",
+      "default_title": "Landmarks"
+   },
+   "commands": {
+      "_execute_browser_action": {
+         "suggested_key": {
+            "default": "Alt+Shift+L"
+         }
+      },
+      "main-landmark": {
+         "description": "__MSG_mainLandmarkShortcutDescription__",
+         "suggested_key": {
+            "default": "Alt+Shift+M"
+         }
+      },
+      "next-landmark": {
+         "description": "__MSG_nextLandmarkShortcutDescription__",
+         "suggested_key": {
+            "default": "Alt+Shift+N"
+         }
+      },
+      "prev-landmark": {
+         "description": "__MSG_previousLandmarkShortcutDescription__",
+         "suggested_key": {
+            "default": "Alt+Shift+P"
+         }
+      },
+      "toggle-all-landmarks": {
+         "description": "__MSG_toggleAllShortcutDescription__"
+      }
+   },
+   "content_scripts": [ {
+      "js": [ "content.js" ],
+      "matches": [ "\u003Call_urls>" ]
+   }, {
+      "js": [ "addHelpLinkToHomePage.js" ],
+      "matches": [ "http://matatk.agrip.org.uk/landmarks/" ]
+   } ],
+   "default_locale": "en_GB",
+   "description": "__MSG_extensionDescription__",
+   "devtools_page": "devtoolsRoot.html",
+   "homepage_url": "http://matatk.agrip.org.uk/landmarks/",
+   "icons": {
+      "128": "landmarks-128.png",
+      "16": "landmarks-16.png",
+      "32": "landmarks-32.png",
+      "48": "landmarks-48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAgNgltGluMnKh41ccJkQp1BD0WkR0mzzht4Q2TW7hHbrYpxGL+3RNMWspzgpZP+q/tr/0neUaK/mej1IGaY9gS8K+/iqCiFXIMu2YJSKm7Ghx3f8iGwkqqibNcZ9C6PDQCK1QO1X1r2nsKoeKcfDKJRfUB/hvLkI9Yiwx7dqh3bmJLCTCXq81YOihXUQNgjs7l0MFVh6AGDF7qOR4H9ogzTDwr/jpQj1TcMMBoACu1szSchGmpjOnfJydWijWn1kbGyAurfw2yZ4eDzjlDMlsZs/ZCvyaYMJkCkhILMJHc7mjrbMVOIMy/srzNjT4nBot/p+CYVEsjAZMvkqN6/mzIQIDAQAB",
+   "manifest_version": 2,
+   "minimum_chrome_version": "80",
+   "name": "__MSG_extensionFullName__",
+   "options_ui": {
+      "chrome_style": false,
+      "open_in_tab": true,
+      "page": "options.html"
+   },
+   "permissions": [ "\u003Call_urls>", "storage", "webNavigation", "tabs" ],
+   "short_name": "__MSG_extensionShortName__",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "2.10.1"
+}

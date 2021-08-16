@@ -1,0 +1,159 @@
+@-moz-document url-prefix() {
+	/* Hacks for Firefox */
+
+	/* The font is not resizable on Firefox—whilst the text size on other
+	   panels does grow when zooming, I've never managed to make this work
+	   here. Not sure if it's me or Firefox's in-built CSS.
+
+	   Refs: <https://stackoverflow.com/q/27273389/1485308> and
+	   <https://bugzilla.mozilla.org/show_bug.cgi?id=1319367> */
+	html { font-size: 12px; }
+
+	body { background-color: var(--bkg); }
+}
+
+html {
+	--text: black;
+	--bkg: white;
+	--thin-accent: gray;
+	--thick-accent: #ccc;
+	--danger: #e00;
+	--link: blue;
+
+	/* Shared across themes */
+	--border: 1px solid var(--thin-accent);
+	--small-spacing: 0.15rem;
+	--padding: 0.25rem;
+	--big-padding: 0.5rem;
+}
+
+html.theme-dark {
+	--text: white;
+	--bkg: black;
+	--thin-accent: #6b6b6b;
+	--thick-accent: #444;
+	--danger: red;
+	--link: #88f;
+}
+
+body {
+	font-family: sans-serif;
+	margin: 0;
+	color: var(--text);
+	line-height: 1.2;
+}
+
+a { color: var(--link); }
+
+button {
+	font-size: inherit;
+	color: var(--text);
+	background-color: unset;
+}
+button.examine::after { content: "🔍"; }
+
+/* Ensure some vertical padding between sections, and horizontal padding for
+ * their contents. The DevTools panel contains only things that are warings or
+ * grouped expandable content. */
+.warning,
+details.department > :not(summary) {
+	padding-left: var(--padding);
+	padding-right: var(--padding);
+}
+
+/* A small gap between them makes them look better when collapsed. */
+details.department { margin-bottom: var(--small-spacing); }
+
+#show-all-label {
+	display: block;
+	margin: var(--padding) 0;
+}
+
+details.department > summary { background: var(--thick-accent); }
+
+h1 {
+	display: inline-block;
+	font-size: 1rem;
+	margin: 0;
+	padding-top: var(--small-spacing);
+	padding-bottom: var(--small-spacing);
+	padding-left: var(--padding);
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+ul ul { padding-left: 2rem; }
+
+li,
+p {
+	display: block;
+	margin-top: var(--padding);
+}
+
+button,
+details.tooltip > summary {
+	border: var(--border);
+	padding: var(--padding);
+	line-height: 1rem;  /* force glyphs to not be too big */
+}
+
+details.tooltip > summary { list-style: none; }  /* for disclosure symbol in Firefox */
+
+button + button,
+button + details.tooltip > summary { margin-left: var(--big-padding); }
+
+/* Focus styles are left to the browser, as defaults are good these days */
+button:hover,
+label:hover,
+a:hover {
+	background-color: var(--thick-accent);
+}
+
+details.tooltip { display: inline; }
+
+details.tooltip > p {
+	margin: 0;
+	padding: var(--padding);
+	background-color: var(--bkg);
+	border: var(--border);
+	position: absolute;
+}
+
+details.tooltip > summary::-webkit-details-marker { display: none; }
+details.tooltip > summary.definition::after { content: "ℹ️"; }
+details.tooltip > summary.lint-warning::after { content: "⚠️"; }
+
+dl {
+	display: grid;
+	grid-template-columns: max-content auto;
+	margin: 0;
+}
+
+dt,
+dd {
+	align-self: center;
+	margin-top: var(--small-spacing);
+	margin-bottom: var(--small-spacing);
+}
+
+/* DevTools connection error (when the extension is reloaded on Chrome et al) */
+div.warning > p {
+	border: 0.15em solid var(--danger);
+	padding: 1rem;
+}
+
+/* FIXME: DRY with common.css —- it's still in there because common.css is also
+ * used on the home page */
+.visually-hidden {
+	position: absolute !important;
+	clip: rect(1px, 1px, 1px, 1px);
+	padding: 0 !important;
+	border: 0 !important;
+	height: 1px !important;
+	width: 1px !important;
+	overflow: hidden;
+	white-space: nowrap;
+}

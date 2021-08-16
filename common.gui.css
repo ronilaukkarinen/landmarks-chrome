@@ -1,0 +1,84 @@
+:root { --spacing: 0.25rem; }
+
+body { margin: 0; }
+
+#content {
+	padding: calc(var(--spacing) * 2);
+	padding-top: 0;
+}
+
+button {
+	/* Due to using browser styles, we need to override height in Firefox
+	 * https://github.com/matatk/landmarks/issues/149 */
+	height: auto;
+	text-align: center;  /* needed for Firefox due to using browser styles */
+}
+
+/*
+ * Warning boxes - building on common.css
+ *
+ * These warnings are designed to have a paragraph followed by two buttons
+ */
+
+.warning {
+	/* The note is displayed as flexbox due to the general "warning" class, but
+	 * we want to display it vertically in the sidebar */
+	flex-direction: column;
+	margin-bottom: calc(var(--spacing) * 2);
+	margin-top: var(--spacing);
+}
+
+.warning > :first-child { margin-top: calc(var(--spacing) * 2); }
+.warning > * { margin-bottom: calc(var(--spacing) * 2); }
+.warning > :last-child { margin-left: 0; }  /* countermand common.css */
+
+.warning button {
+	width: 100%;
+	border-color: var(--background-1);
+	color: var(--background-1);
+	background-color: var(--accent-2);
+	font-weight: bold;
+}
+
+.warning + .warning button {
+	background-color: var(--accent-3);
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+ul ul { padding-left: 2rem; }
+
+li {
+	display: block;
+	margin-top: 0.5rem;
+}
+
+#show-all-label {
+	display: block;
+	margin: 0;
+	margin-bottom: calc(var(--spacing) * 2);
+	margin-top: calc(var(--spacing) * 2);
+	white-space: nowrap;  /* encourage the pop-up to be wide enough on Chrome */
+}
+
+#links {
+	display: flex;
+	margin-left: var(--spacing);
+	margin-right: 0;
+	margin-bottom: calc(var(--spacing) * 2);
+}
+
+#links button {
+	display: block;
+	flex-grow: 1;
+	margin-left: 0;
+	margin-right: var(--spacing);
+}
+
+label,
+:not(.warning) > p {
+	color: var(--text-1);  /* countermand Firefox extension.css */
+}

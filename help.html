@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Landmarks help</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="common.css">
+		<link rel="stylesheet" href="common.pages.css">
+		<link rel="stylesheet" href="help.css">
+	</head>
+	<body>
+		<header>
+			<h1>Landmarks help</h1>
+			<p>If you need support, please <a href="https://github.com/matatk/landmarks/issues">check the known issues for Landmarks</a> and, if necessary, file a new issue using the "New Issue" button on that page.</p>
+		</header>
+
+		<main>
+			<div class="warning" id="warning-shortcuts" hidden>
+				<span class="warning-symbol"> <span aria-hidden="true">&#x26a0;</span><span class="visually-hidden">warning</span></span>
+				<p>At least one <a href="#section-keyboard-shortcuts">keyboard shortcut</a> is not set.</p>
+			</div>
+
+			<div id="placeholder"></div>
+
+			<div id="section-keyboard-shortcuts">
+				<h2 id="section-keyboard-shortcuts-heading">Keyboard navigation<span class="warning-symbol"> <span aria-hidden="true">&#x26a0;</span><span class="visually-hidden">warning</span></span></h2> <!-- FIXME concat -->
+				<div id="keyboard-shortcuts-table"></div>
+				<p class="centre"><button id="open-browser-shortcuts-settings">Add or change shortcuts</button></p>
+				<p id="keyboard-shortcuts-instructions-firefox"><strong>To change shortcuts:</strong> Menu ☰ → Add-ons → Extensions [on left-hand side, if not already activated] → Cog wheel [to the right of &quot;Manage Your Extensions&quot;] → Manage Extension Shortcuts.</p></li>
+			</div>
+
+			<div id="section-features">
+				<h2>Features</h2>
+				<p>Thanks for installing the Landmarks extension. With it, you can&hellip;</p>
+				<ul>
+					<li>Quickly check how many landmark regions the page has, via the toolbar icon.</li>
+					<li>Explore landmarks via keyboard shortcuts.</li>
+					<li>Explore landmarks via the toolbar pop-up.</li>
+					<li>Explore landmarks via the browser sidebar (Firefox only&mdash;there is currently a known bug with Opera that prevents the sidebar from being recognised).</li>
+					<li>Use the developer tools panel to inspect the code behind landmark regions.</li>
+				</ul>
+				<p>You can change the following <a href="options.html">preferences</a>.</p>
+				<ul>
+					<li>How long the border is shown.</li>
+					<li>The border's colour.</li>
+					<li>The font size of the in-page landmark labels.</li>
+				</ul>
+				<h3>Subtle details</h3>
+				<p>If a page lacks an author-specified &quot;<span data-message="roleMain"></span>&quot; landmark region, the extension will attempt to guess where it might be. Likewise if the author didn't specify any &quot;<span data-message="roleNavigation"></span>&quot; regions, the extension will try to guess those. The guesses are based on commonly-used element <code>id</code> and <code>class</code> attribute values.</p>
+				<p>Each page is meant to have only one &quot;<span data-message="roleMain"></span>&quot; region, however some pages do have more than one. In this case, using the &quot;<span data-message="mainLandmarkShortcutDescription"></span>&quot; will cycle between them.</p>
+			</div>
+
+			<div id="section-new">
+				<h2>What's new?</h2>
+				<p>New in version 2.10.0&hellip;</p>
+				<ul>
+					<li>Try guessing what may be the &quot;<span data-message="roleMain"></span>&quot; region if the page author hasn't declared one.</li>
+					<li>Try guessing &quot;<span data-message="roleNavigation"></span>&quot; regions if the author hasn't declared any.</li>
+					<li>Improve the DevTools panel's style, match the browsers' UI more.</li>
+					<li>Add a DevTools warning for the page lacking a &quot;<span data-message="roleMain"></span>&quot; region.</li>
+				</ul>
+				<p>This is version <span id="version"></span>, which addresses the following bugs/small things&hellip;</p>
+				<ul>
+					<li>Don't guess regions that have no text content.</li>
+					<li>Fix the update notice not appearing.</li>
+					<li>Document that on Opera, the sidebar is currently broken due to a browser bug.</li>
+				</ul>
+				<p>For full details, consult the <a href="https://github.com/matatk/landmarks/blob/master/CHANGELOG.md#changelog">change log</a>.</p>
+			</div>
+
+			<div>
+				<!-- This comes from the README -->
+				<h2>About landmark regions, for authors and developers</h2>
+				<p>Landmark regions can really help people get a quick overview of your content, and navigate it much more effectively. This can save them <em>a lot</em> of time, so please consider implementing landmarks on your site. If you’re using HTML5, you’ll almost certainly have some landmarks already, but there are some things you need to know; the info below will help you ensure your landmarks are as helpful as possible.</p>
+				<ul>
+					<li><a href="http://matatk.agrip.org.uk/talks/2020/landmarks/">All about landmark regions, and some golden rules (story and slides for my a11yTOConf talk)</a></li>
+					<li><a href="https://www.youtube.com/watch?v=IhWMou12_Vk">Léonie Watson demonstrates landmarks (video)</a></li>
+					<li><a href="https://www.w3.org/TR/wai-aria-practices/examples/landmarks/index.html">W3C ARIA landmarks example and advice page</a></li>
+					<li><a href="https://www.paciellogroup.com/blog/2015/09/easy-content-organisation-with-html5/">Easy content organisation with HTML5 (The Paciello Group ’blog article)</a></li>
+					<li><a href="https://www.paciellogroup.com/blog/2013/02/using-wai-aria-landmarks-2013/">Using WAI-ARIA landmarks (The Paciello Group ’blog article)</a></li>
+				</ul>
+				<p>Please bear in mind the following when implementing landmarks…</p>
+				<ul>
+					<li><p>It’s important that landmarks are not over-used, because their power comes from providing a concise overview of the content of the page. The heading hierarchy for the page can be relied upon for more fine-grained navigation within a particular area of a page.</p>
+						<p><strong>Rule of thumb:</strong> Use as few landmarks as possible, but ensure that all of the content on the page is within a landmark region.</p></li>
+					<li><p>If you’re using HTML5 elements such as <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code> and others, then your page will inherit some landmarks automagically. However it can be really helpful to label them (especially if there’s more than one landmark of the same type on a page, such as a separate site-wide and page-local <code>&lt;nav&gt;</code>). The W3C documentation has all the details, but essentially you would use either the <code>aria-labelledby</code> or <code>aria-label</code> attribute.</p>
+						<p><strong>Rule of thumb:</strong> If you’ve more than one landmark of the same type, then be sure to label them, so their purpose is clear.</p></li>
+				</ul>
+
+				<h2>This extension's support for landmark regions</h2>
+				<p>The Landmarks extension uses the <a href="https://github.com/matatk/page-structural-semantics-scanner-tests#support-for-landmarks">Page Structural Semantics Scanner Tests suite; you can find information on standards support there</a>.</p>
+			</div>
+		</main>
+
+		<script src="content.js"></script>
+		<script src="help.js"></script>
+	</body>
+</html>

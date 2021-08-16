@@ -1,0 +1,41 @@
+.missing-shortcut {
+	font-weight: bold;
+	color: var(--error);
+	border-color: var(--error);
+}
+
+.warning-symbol { display: none; }
+
+.warning > .warning-symbol,
+.missing-shortcut > .warning-symbol { display: initial; }
+
+table {
+	margin-top: 0.5rem;
+	border-collapse: collapse;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+tr:nth-child(odd) { background-color: var(--background-2); }
+
+tr:first-child {
+	background-color: var(--accent-1);
+	color: var(--background-1);
+}
+
+th,
+td {
+	padding: 0.5rem;
+	padding-left: 2rem;
+	padding-right: 2rem;
+}
+
+td:last-child,
+.centre { text-align: center; }
+
+/* When there's no button to take the user to the browser's keyboard shortcut
+ * settings, leave a space between the end of the table and the manaul
+ * instructions. */
+#keyboard-shortcuts-table + details summary {
+	margin-top: 1em;
+}

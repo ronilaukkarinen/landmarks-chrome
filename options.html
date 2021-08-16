@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title data-message="prefsTitle"></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="common.css">
+		<link rel="stylesheet" href="common.pages.css">
+		<link rel="stylesheet" href="options.css">
+	</head>
+	<body>
+		<header>
+			<h1 data-message="prefsTitle"></h1>
+		</header>
+
+		<main>
+			<fieldset data-pref="borderType">
+				<legend data-message="prefsBorderType"></legend>
+
+				<div class="field-radio">
+					<input type="radio" name="border-type" value="momentary" id="radio-momentary">
+					<label for="radio-momentary" data-message="prefsMomentary"></label>
+				</div>
+
+				<div class="field-radio">
+					<input type="radio" name="border-type" value="persistent" id="radio-persistent">
+					<label for="radio-persistent" data-message="prefsPersistent"></label>
+				</div>
+
+				<div class="field-radio">
+					<input type="radio" name="border-type" value="none" id="radio-none">
+					<label for="radio-none" data-message="prefsNone"></label>
+				</div>
+			</fieldset>
+
+			<div id="gird">
+				<label for="border-colour" data-message="prefsBorderColour"></label>
+				<input type="color" id="border-colour" data-pref="borderColor">
+
+				<label for="border-font-size" data-message="prefsBorderFontSize"></label>
+				<input type="number" id="border-font-size" data-pref="borderFontSize">
+			</div>
+
+			<div>
+				<button id="reset-messages" data-message="prefsResetMessages" aria-describedby="reset-messages-feedback"></button>
+				<span aria-live="polite" id="reset-messages-feedback"></span>
+			</div>
+
+			<button id="reset-to-defaults" data-message="prefsResetAll"></button>
+		</main>
+
+		<script src="content.js"></script>
+		<script src="options.js"></script>
+	</body>
+</html>
